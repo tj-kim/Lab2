@@ -38,20 +38,20 @@ output reg  negativeedge    // 1 clk pulse at falling edge of conditioned
 endmodule
 
 
-module d_flip_flop (din, clk, reset, dout);
-(
-input din;
-input clk;
-input reset;
-output reg dout;
-    );
+// module d_flip_flop (din, clk, reset, dout);
+// (
+// input din;
+// input clk;
+// input reset;
+// output reg dout;
+//     );
 
-    always @(posedge clk) begin
-        if(reset) begin
-            dout <= 0;
-        end
-        else
-            dout <= din;
-        end
-    end
-endmodule
+//     always @(posedge clk) begin
+//         if(reset) begin
+//             dout <= 0;
+//         end
+//         else
+//             dout <= din;
+//         end
+//     end
+// endmodule
