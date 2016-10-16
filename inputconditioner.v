@@ -32,8 +32,8 @@ output reg  negativeedge    // 1 clk pulse at falling edge of conditioned
             else 
                 counter <= counter+1;
         end
-        synchronizer0 <= noisysignal;
-        synchronizer1 <= synchronizer0;
+        synchronizer0 <= noisysignal;       // dflipflop1
+        synchronizer1 <= synchronizer0;     //dflipflop2
         positiveedge <= 0;
         negativeedge <= 0;
     end
@@ -53,7 +53,7 @@ endmodule
 // input din;
 // input clk;
 // input reset;
-// output reg dout;
+// output reg dout
 //     );
 
 //     always @(posedge clk) begin
