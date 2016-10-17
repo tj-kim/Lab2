@@ -1,0 +1,101 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x1d198b0 .scope module, "testshiftregister" "testshiftregister" 2 8;
+ .timescale -9 -12;
+v0x1d55b70_0 .var "clk", 0 0;
+v0x1d55c10_0 .var "parallelDataIn", 7 0;
+v0x1d55cc0_0 .net "parallelDataOut", 7 0, L_0x1d56030; 1 drivers
+v0x1d55d70_0 .var "parallelLoad", 0 0;
+v0x1d55e50_0 .var "peripheralClkEdge", 0 0;
+v0x1d55f00_0 .var "serialDataIn", 0 0;
+v0x1d55f80_0 .net "serialDataOut", 0 0, L_0x1d560e0; 1 drivers
+S_0x1d2e120 .scope module, "dut" "shiftregister" 2 19, 3 9, S_0x1d198b0;
+ .timescale -9 -12;
+P_0x1d3f248 .param/l "width" 3 10, +C4<01000>;
+L_0x1d56030 .functor BUFZ 8, v0x1d55a80_0, C4<00000000>, C4<00000000>, C4<00000000>;
+v0x1d3d250_0 .net "clk", 0 0, v0x1d55b70_0; 1 drivers
+v0x1d55670_0 .net "parallelDataIn", 7 0, v0x1d55c10_0; 1 drivers
+v0x1d55710_0 .alias "parallelDataOut", 7 0, v0x1d55cc0_0;
+v0x1d557b0_0 .net "parallelLoad", 0 0, v0x1d55d70_0; 1 drivers
+v0x1d55860_0 .net "peripheralClkEdge", 0 0, v0x1d55e50_0; 1 drivers
+v0x1d55900_0 .net "serialDataIn", 0 0, v0x1d55f00_0; 1 drivers
+v0x1d559e0_0 .alias "serialDataOut", 0 0, v0x1d55f80_0;
+v0x1d55a80_0 .var "shiftregistermem", 7 0;
+E_0x1d19ae0 .event posedge, v0x1d3d250_0;
+E_0x1d2cc00 .event posedge, v0x1d55860_0;
+L_0x1d560e0 .part v0x1d55a80_0, 7, 1;
+    .scope S_0x1d2e120;
+T_0 ;
+    %wait E_0x1d19ae0;
+    %load/v 8, v0x1d557b0_0, 1;
+    %jmp/0xz  T_0.0, 8;
+    %load/v 8, v0x1d55670_0, 8;
+    %ix/load 0, 8, 0;
+    %assign/v0 v0x1d55a80_0, 0, 8;
+    %jmp T_0.1;
+T_0.0 ;
+    %wait E_0x1d2cc00;
+    %load/v 8, v0x1d55a80_0, 8;
+    %ix/load 0, 1, 0;
+    %mov 4, 0, 1;
+    %shiftl/i0  8, 8;
+    %ix/load 0, 8, 0;
+    %assign/v0 v0x1d55a80_0, 0, 8;
+    %load/v 8, v0x1d55900_0, 1;
+    %ix/load 0, 1, 0;
+    %ix/load 1, 0, 0;
+    %assign/v0/x1 v0x1d55a80_0, 0, 8;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x1d198b0;
+T_1 ;
+    %delay 2000, 0;
+    %load/v 8, v0x1d55b70_0, 1;
+    %inv 8, 1;
+    %set/v v0x1d55b70_0, 8, 1;
+    %delay 20000, 0;
+    %load/v 8, v0x1d55e50_0, 1;
+    %inv 8, 1;
+    %set/v v0x1d55e50_0, 8, 1;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x1d198b0;
+T_2 ;
+    %vpi_call 2 33 "$dumpfile", "shiftregister.vcd";
+    %vpi_call 2 34 "$dumpvars";
+    %set/v v0x1d55b70_0, 0, 1;
+    %vpi_call 2 36 "$display", "  clk |  pclk  |   pload   |    pin    |   sin   |    sout |  expected";
+    %set/v v0x1d55e50_0, 0, 1;
+    %set/v v0x1d55d70_0, 0, 1;
+    %movi 8, 240, 8;
+    %set/v v0x1d55c10_0, 8, 8;
+    %set/v v0x1d55f00_0, 1, 1;
+    %delay 26000, 0;
+    %vpi_call 2 38 "$display", "  %b  |   %b      |    %b   |   %b   |   %b   |   %b    |     11100001   1", v0x1d55b70_0, v0x1d55e50_0, v0x1d55d70_0, v0x1d55c10_0, v0x1d55f00_0, v0x1d55cc0_0, v0x1d55f80_0;
+    %set/v v0x1d55d70_0, 1, 1;
+    %movi 8, 240, 8;
+    %set/v v0x1d55c10_0, 8, 8;
+    %set/v v0x1d55f00_0, 1, 1;
+    %delay 30000, 0;
+    %vpi_call 2 40 "$display", "  %b  |   %b      |    %b   |   %b   |   %b   |   %b    |     11100001   0", v0x1d55b70_0, v0x1d55e50_0, v0x1d55d70_0, v0x1d55c10_0, v0x1d55f00_0, v0x1d55cc0_0, v0x1d55f80_0;
+    %set/v v0x1d55d70_0, 1, 1;
+    %movi 8, 240, 8;
+    %set/v v0x1d55c10_0, 8, 8;
+    %set/v v0x1d55f00_0, 1, 1;
+    %delay 40000, 0;
+    %vpi_call 2 42 "$display", "  %b  |   %b      |    %b   |   %b   |   %b   |   %b    |     11100001   0", v0x1d55b70_0, v0x1d55e50_0, v0x1d55d70_0, v0x1d55c10_0, v0x1d55f00_0, v0x1d55cc0_0, v0x1d55f80_0;
+    %delay 60000, 0;
+    %vpi_call 2 45 "$finish";
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "shiftregister.t.v";
+    "./shiftregister.v";
