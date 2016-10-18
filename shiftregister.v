@@ -25,8 +25,8 @@ output              serialDataOut       // Positive edge synchronized
         	shiftregistermem <= parallelDataIn;
         end
         else @(posedge peripheralClkEdge) begin
-        		shiftregistermem <= shiftregistermem << 1;
-        		shiftregistermem[0] <= serialDataIn;
+        	shiftregistermem <= shiftregistermem << 1;
+        	shiftregistermem[0] <= serialDataIn;
         end
     end
     assign parallelDataOut = shiftregistermem;

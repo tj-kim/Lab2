@@ -24,24 +24,40 @@ module testshiftregister();
     		           .parallelDataOut(parallelDataOut), 
     		           .serialDataOut(serialDataOut));
     always begin
-    #2 clk = ~clk;
-    //#20 peripheralClkEdge= ~peripheralClkEdge;
+    #1 clk = ~clk;
+    //#6 peripheralClkEdge= ~peripheralClkEdge;
     end
 
     initial begin
     	// Your Test Code
         $dumpfile("shiftregister.vcd");
         $dumpvars();
-        clk=0; 
-        peripheralClkEdge=0; parallelLoad=0; parallelDataIn=8'b00000000; serialDataIn=1;#2
-        $display("  clk |  pclk  |   pload   |    pin    |   sin   |    sout |  expected");
-        peripheralClkEdge=0; parallelLoad=0; parallelDataIn=8'b11110000; serialDataIn=1;#2
-        peripheralClkEdge = 1;
-        $display("  %b  |   %b      |    %b   |   %b   |   %b   |   %b    |     11100001   1",  clk, peripheralClkEdge, parallelLoad, parallelDataIn, serialDataIn, parallelDataOut, serialDataOut);
+
+        $display(" clk  |   pclk   |  pload |     pin      |  sin  |      pout     |  sout  |  expected");
+        
+        clk=1; 
+        
+        peripheralClkEdge=0;
+        parallelLoad=0; parallelDataIn=8'b00000000; serialDataIn=1;#10
+        $display("  %b  |    %b     |    %b   |   %b   |   %b   |   %b    |   %b    |  00000000   0",  1, 1'b0, parallelLoad, parallelDataIn, serialDataIn, parallelDataOut, serialDataOut);
+        
+        parallelLoad=1;#10
+        $display("  %b  |    %b     |    %b   |   %b   |   %b   |   %b    |   %b    |  00000000   0",  1, 1'b0, parallelLoad, parallelDataIn, serialDataIn, parallelDataOut, serialDataOut); 
+
+        parallelLoad=0; serialDataIn=1;#8
+        peripheralClkEdge = 1; #10
+        $display("  %b  |    %b     |    %b   |   %b   |   %b   |   %b    |   %b    |  00000001   0",  1, 1'b1, parallelLoad, parallelDataIn, serialDataIn, parallelDataOut, serialDataOut);
+        
+        peripheralClkEdge = 0; #10
+        parallelLoad=0; parallelDataIn=8'b11110000; serialDataIn=1; #10 
+        peripheralClkEdge = 1; #10
+        $display("  %b  |    %b     |    %b   |   %b   |   %b   |   %b    |   %b    |  11100001   1",  1, 1'b0, parallelLoad, parallelDataIn, serialDataIn, parallelDataOut, serialDataOut);
+        
+        parallelLoad=1; parallelDataIn=8'b11110000; serialDataIn=1; #10 
+        $display("  %b  |    %b     |    %b   |   %b   |   %b   |   %b    |   %b    |  11100001   1",  1, 1'b0, parallelLoad, parallelDataIn, serialDataIn, parallelDataOut, serialDataOut);
+        
         parallelLoad=1; parallelDataIn=8'b11110000; serialDataIn=1;
-        #30 $display("  %b  |   %b      |    %b   |   %b   |   %b   |   %b    |     11100001   0",  clk, peripheralClkEdge, parallelLoad, parallelDataIn, serialDataIn, parallelDataOut, serialDataOut);
-        parallelLoad=1; parallelDataIn=8'b11110000; serialDataIn=1;
-        #40 $display("  %b  |   %b      |    %b   |   %b   |   %b   |   %b    |     11100001   0",  clk, peripheralClkEdge, parallelLoad, parallelDataIn, serialDataIn, parallelDataOut, serialDataOut);
+        $display("  %b  |    %b     |    %b   |   %b   |   %b   |   %b    |   %b    |  11100001   1",  1, 1'b1, parallelLoad, parallelDataIn, serialDataIn, parallelDataOut, serialDataOut);
 
 
         #60 $finish;
