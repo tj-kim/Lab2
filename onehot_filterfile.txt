@@ -1,0 +1,11 @@
+# Filter file for states of FSM
+
+00 Reset
+01 Get
+02 Got
+03 Read1
+04 Read2
+10 Read3
+20 Write1
+30 Write2
+40 Done

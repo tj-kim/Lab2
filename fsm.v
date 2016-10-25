@@ -10,47 +10,54 @@ input msb_sr,	// most significant bit shift register output
 input c_cs,		// conditioned chip select signal put thru input conditioner
 input peripheralClkEdge,	// peripheral clockedge of sclk
 input clk,					// clk
-output reg MISO_BUFF, 			// miso output enable
-output reg DM_WE,				// Data Memory Write Enable
-output reg ADDR_WE,				// Address Write Enable (for address latch)
-output reg SR_WE				// Shift Register Write Enable
+output MISO_BUFF, 			// miso output enable
+output DM_WE,				// Data Memory Write Enable
+output ADDR_WE,				// Address Write Enable (for address latch)
+output SR_WE				// Shift Register Write Enable
 );
 
-    reg [2:0]  counter;
+    reg [3:0]  counter;
     reg [10:0] LUT_command;
     reg [7:0]  one_hot_signal;
-    reg [3:0]  next_index;
     reg 	   counter_full_holder;
-    reg  	   Reset_counter;
+    wire [3:0]  next_index;
+    wire  	   Reset_counter;
+
+    initial begin // set start values for one hot state and counter
+    	counter <= 4'b0000;
+    end
 
     always @(posedge clk) begin
+	    // Post LUT, if reset counter, we reset clock, we start by updating
+	    if (Reset_counter) begin
+	    	counter <= 4'b0000;
+	    end
+
+	    // If we are at the 'done' state, we will go back to the reset state
+	    if(next_index == 4'b1000) begin
+	    	one_hot_signal = 8'b00000000;
+	    end
+	    else begin  // if not at done state, we will go to state indicated by next state
+	    	one_hot_signal = 1<<next_index; 
+	    end
+
+    	// update LUT command signal based upon inputs
     	LUT_command[10] = c_cs;
     	LUT_command[9] = msb_sr;
     	LUT_command[7:0] = one_hot_signal;
 
+    	// if peripheralclkedge, we update the counter and see if its at 8 or not
 	    if (peripheralClkEdge) begin
-	    	counter <= counter + 3'b001;
-	    	if (counter == 3'b111) begin
-	    		LUT_command[8] = 1;
+	    	counter <= counter + 4'b0001; 	// add 1 to the counter
+	    	if (counter > 4'b0111) begin
+	    		LUT_command[8] = 1;			// raise flag in command if counter is full
 	    	end
 	    	else begin
-	    		LUT_command[8] = 0;
+	    		LUT_command[8] = 0;			// don't raise flag if counter is not full
 	    	end
 	    end
-
-	    fsm_LUT(SR_WE, Reset_counter, DM_WE, ADDR_WE, MISO_BUFF, next_index, LUT_command);
-
-	    if (Reset_counter) begin
-	    	counter <= 3'b000;
-	    end
-
-	    if(next_index == 4'b1000) begin
-	    	one_hot_signal <= 8'b00000000
-	    end
-	    else begin
-	    	one_hot_signal = 1<<next_index; 
-	    end
     end
+    fsm_LUT	fms_lut(SR_WE, Reset_counter, DM_WE, ADDR_WE, MISO_BUFF, next_index, LUT_command);
 
 endmodule
 
@@ -60,10 +67,10 @@ endmodule
 //      First bit is Cs, 2nd is msb, 3rd is counterfull
 //		Last 8 are next state index (Which state the name lines up to) in one hot form
 
-`define RESET_1   11'b110xxxxxxxx // initial state with msb 1
-`define RESET_2   11'b100xxxxxxxx // initial state with msb 0
-`define RESET_3   11'b11000000000 // initial state with msb 1
-`define RESET_4   11'b10000000000 // initial state with msb 0
+`define RESET_1   11'b11000000000 // initial state with msb 1
+`define RESET_2   11'b10000000000 // initial state with msb 0
+`define RESET_3   11'b110xxxxxxxx // initial state with msb 1
+`define RESET_4   11'b100xxxxxxxx // initial state with msb 0
 
 `define Get_1     11'b10000000001 // Get state with msb 0, counter_full 0
 `define Get_2     11'b11000000001 // Get state with msb 1, counter_full 0
@@ -71,7 +78,7 @@ endmodule
 `define Get_4     11'b11100000001 // Get state with msb 1, counter_full 1
 
 `define Got_1     11'b11100000010 // Got state with msb 1, counter_full 1, goes to read
-`define Got_2     11`b10100000010 // Got state with msb 0, counter_full 1, goes to write
+`define Got_2     11'b10100000010 // Got state with msb 0, counter_full 1, goes to write
 
 `define Read1     11'b11000000100 // Read 1 state with msb 1, countefull 0
 
@@ -108,10 +115,10 @@ module fsm_LUT // Converts the commands to a more convenient format
     always @(LUT_command) begin
       case (LUT_command)
       	
-      	`RESET1:    begin SR_WE = 0; Reset_counter=1; DM_WE = 0; ADDR_WE = 0; MISO_BUFF = 0; next_index = 4'b0000; end
-      	`RESET2:    begin SR_WE = 0; Reset_counter=1; DM_WE = 0; ADDR_WE = 0; MISO_BUFF = 0; next_index = 4'b0000; end
-        `RESET3:    begin SR_WE = 0; Reset_counter=1; DM_WE = 0; ADDR_WE = 0; MISO_BUFF = 0; next_index = 4'b0000; end
-      	`RESET4:    begin SR_WE = 0; Reset_counter=1; DM_WE = 0; ADDR_WE = 0; MISO_BUFF = 0; next_index = 4'b0000; end
+      	`RESET_1:    begin SR_WE = 0; Reset_counter=1; DM_WE = 0; ADDR_WE = 0; MISO_BUFF = 0; next_index = 4'b0000; end
+      	`RESET_2:    begin SR_WE = 0; Reset_counter=1; DM_WE = 0; ADDR_WE = 0; MISO_BUFF = 0; next_index = 4'b0000; end
+ 		`RESET_3:    begin SR_WE = 0; Reset_counter=1; DM_WE = 0; ADDR_WE = 0; MISO_BUFF = 0; next_index = 4'b0000; end
+      	`RESET_4:    begin SR_WE = 0; Reset_counter=1; DM_WE = 0; ADDR_WE = 0; MISO_BUFF = 0; next_index = 4'b0000; end
 
         `Get_1:  	begin SR_WE = 0; Reset_counter=0; DM_WE = 0; ADDR_WE = 0; MISO_BUFF = 0; next_index = 4'b0000; end
 		`Get_2:  	begin SR_WE = 0; Reset_counter=0; DM_WE = 0; ADDR_WE = 0; MISO_BUFF = 0; next_index = 4'b0000; end
