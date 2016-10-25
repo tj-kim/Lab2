@@ -16,56 +16,41 @@ output reg ADDR_WE,				// Address Write Enable (for address latch)
 output reg SR_WE				// Shift Register Write Enable
 );
 
-    // reg [2:0] counter;
-    // if (peripheralClkEdge) begin
-    // 	if (counter < 3'b100) begin  // get 
-    //     	counter <= counter + 3'b001; //increment counter
-    //     end
-    // 	else if (counter == 3'b100) begin // got
-    // 		if (msb_sr == 1) begin 	// if read...
-    // 			// skip through read 1
-    // 	// 		// read 2
-    // 	// 		MISO_BUFF <= 0; DM_WE<=0; ADDR_WE<= 0; SR_WE <=1;
-    // 	// 		// read 3
- 			// 	// MISO_BUFF <= 1; DM_WE<=0; ADDR_WE<= 0; SR_WE <=0;
-    // 		end
-    // 		else begin 				// if write...
-
-    // 		end
-    // 		counter <= 3'b000;
-    // 	end
-
-    // end
-
-    reg [2:0] counter;
+    reg [2:0]  counter;
     reg [10:0] LUT_command;
+    reg [7:0]  one_hot_signal;
+    reg [3:0]  next_index;
+    reg 	   counter_full_holder;
+    reg  	   Reset_counter;
 
-    always @(negedge clk) begin
+    always @(posedge clk) begin
+    	LUT_command[10] = c_cs;
+    	LUT_command[9] = msb_sr;
+    	LUT_command[7:0] = one_hot_signal;
+
 	    if (peripheralClkEdge) begin
 	    	counter <= counter + 3'b001;
-
-	    	// LUT_command clock 8 flag
 	    	if (counter == 3'b111) begin
-	    		LUT_command[x] = 1;
+	    		LUT_command[8] = 1;
 	    	end
 	    	else begin
-	    		LUT_command[x] = 0;
+	    		LUT_command[8] = 0;
 	    	end
+	    end
 
-	    	// LUT command inputted to LUT function
+	    fsm_LUT(SR_WE, Reset_counter, DM_WE, ADDR_WE, MISO_BUFF, next_index, LUT_command);
 
+	    if (Reset_counter) begin
+	    	counter <= 3'b000;
+	    end
 
-
-	    	// if (counter < 3'b111) begin  // get 
-	     //    	counter <= counter + 3'b001; //increment counter
-	     //    end
-	    	// else if (counter == 3'b111) begin // got
-	    	// 	counter <= 3'b000;
-	    	// end
-
+	    if(next_index == 4'b1000) begin
+	    	one_hot_signal <= 8'b00000000
+	    end
+	    else begin
+	    	one_hot_signal = 1<<next_index; 
 	    end
     end
-    fsm_LUT(SR_WE,);
 
 endmodule
 
@@ -117,11 +102,11 @@ module fsm_LUT // Converts the commands to a more convenient format
     output reg  ADDR_WE,
     output reg  MISO_BUFF,
     output reg [3:0]  next_index,
-    input[10:0]  ALUcommand
+    input[10:0]  LUT_command
 );
 
-    always @(ALUcommand) begin
-      case (ALUcommand)
+    always @(LUT_command) begin
+      case (LUT_command)
       	
       	`RESET1:    begin SR_WE = 0; Reset_counter=1; DM_WE = 0; ADDR_WE = 0; MISO_BUFF = 0; next_index = 4'b0000; end
       	`RESET2:    begin SR_WE = 0; Reset_counter=1; DM_WE = 0; ADDR_WE = 0; MISO_BUFF = 0; next_index = 4'b0000; end
