@@ -3,9 +3,9 @@
 00 Reset
 01 Get
 02 Got
-03 Read1
-04 Read2
+04 Read1
+08 Read2
 10 Read3
 20 Write1
-30 Write2
-40 Done
+40 Write2
+80 Done

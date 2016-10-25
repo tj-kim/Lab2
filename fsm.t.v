@@ -38,32 +38,143 @@ module testfsm();
         $display(" clk  |   pclk   |  pload |     pin      |  sin  |      pout     |  sout  |  expected");
         
         // Initial Conditions time = 0
-        clk=1; peripheralClkEdge = 0; msb_sr = 0; c_cs = 1; #2
-        // Now we will assign values for different test cases
-        peripheralClkEdge = 1; msb_sr = 0; c_cs =1; #1
-        peripheralClkEdge = 0; msb_sr = 0; c_cs =1; #3
-        peripheralClkEdge = 1; msb_sr = 0; c_cs =1; #1
-        peripheralClkEdge = 0; msb_sr = 0; c_cs =1; #3
-        peripheralClkEdge = 1; msb_sr = 0; c_cs =1; #1
-        peripheralClkEdge = 0; msb_sr = 0; c_cs =1; #3
-        peripheralClkEdge = 1; msb_sr = 0; c_cs =1; #1
-        peripheralClkEdge = 0; msb_sr = 0; c_cs =1; #3
-        peripheralClkEdge = 1; msb_sr = 0; c_cs =1; #1
-        peripheralClkEdge = 0; msb_sr = 0; c_cs =1; #3
-        peripheralClkEdge = 1; msb_sr = 0; c_cs =1; #1
-        peripheralClkEdge = 0; msb_sr = 0; c_cs =1; #3
-        peripheralClkEdge = 1; msb_sr = 0; c_cs =1; #1
-        peripheralClkEdge = 0; msb_sr = 0; c_cs =1; #3
-        peripheralClkEdge = 1; msb_sr = 0; c_cs =1; #1
-        peripheralClkEdge = 0; msb_sr = 0; c_cs =1; #3
-        peripheralClkEdge = 1; msb_sr = 0; c_cs =1; #1
-        peripheralClkEdge = 0; msb_sr = 0; c_cs =1; #3
-        peripheralClkEdge = 1; msb_sr = 0; c_cs =1; #1
-        peripheralClkEdge = 0; msb_sr = 0; c_cs =1; #3
-        peripheralClkEdge = 1; msb_sr = 0; c_cs =1; #1
-        peripheralClkEdge = 0; msb_sr = 0; c_cs =1; #3
-        peripheralClkEdge = 1; msb_sr = 0; c_cs =1; #1
-        peripheralClkEdge = 0; msb_sr = 0; c_cs =1; #3
+        clk=1; peripheralClkEdge = 0; msb_sr = 0; c_cs = 1; #5
+
+        // Testing Write
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
+
+
+        // Testing Write
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+
+
+        // Testing cs off
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #5
+
+        // Testing Write
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+    
+      
         #10 $finish;
     end
 
