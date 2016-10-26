@@ -1,13 +1,13 @@
 module fsm
 (
-input clk,
-input msb_sr,	// most significant bit shift register output
-input c_cs,		// conditioned chip select signal put thru input conditioner
-input peripheralClkEdge,	// peripheral clockedge of sclk
-output reg MISO_BUFF, 			// miso output enable
-output reg DM_WE,				// Data Memory Write Enable
-output reg ADDR_WE,				// Address Write Enable (for address latch)
-output reg SR_WE				// Shift Register Write Enable
+	input clk,
+	input msb_sr,	// most significant bit shift register output
+	input c_cs,		// conditioned chip select signal put thru input conditioner
+	input peripheralClkEdge,	// peripheral clockedge of sclk
+	output reg MISO_BUFF, 			// miso output enable
+	output reg DM_WE,				// Data Memory Write Enable
+	output reg ADDR_WE,				// Address Write Enable (for address latch)
+	output reg SR_WE				// Shift Register Write Enable
 );
 reg[7:0] state;
 
@@ -26,7 +26,11 @@ reg reset_flg;
 initial begin
 counter = 4'b0000;
 counter_reset = 0;
-//reset_flg = 0;
+state = GET;
+MISO_BUFF = 0;
+DM_WE =0;
+ADDR_WE =0;
+SR_WE =0;
 end
 
 
@@ -39,11 +43,11 @@ always @(posedge clk) begin
 	//reset_flg <= 1;
 	//end
 
-	
+
 
 	if (peripheralClkEdge && !counter_reset) begin
 		counter <= counter + 1;
-	end 
+	end
 
 	if(counter_reset || c_cs ) begin
 		counter <=0;
@@ -121,7 +125,7 @@ always @(posedge clk) begin
 
 			DONE: begin
 				// if (reset_flg); begin
-					state <= GET;
+					state <= DONE;
 					// reset_flg <=0;
 				// end
 			end

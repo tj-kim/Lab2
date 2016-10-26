@@ -1,9 +1,7 @@
 //------------------------------------------------------------------------
-// Shift Register test bench
+// Finite State Machine test bench
 //------------------------------------------------------------------------
 `timescale 1ns / 1ps
-
-`include "fsm_pk.v"
 
 module testfsm();
 
@@ -17,11 +15,11 @@ module testfsm();
     wire SR_WE;                // Shift Register Write Enable
 
     // Instantiate with parameter width = 8
-    fsm dut(.clk(clk), 
+    fsm dut(.clk(clk),
     		           .peripheralClkEdge(peripheralClkEdge),
-    		           .msb_sr(msb_sr), 
-    		           .c_cs(c_cs), 
-    		           .MISO_BUFF(MISO_BUFF), 
+    		           .msb_sr(msb_sr),
+    		           .c_cs(c_cs),
+    		           .MISO_BUFF(MISO_BUFF),
     		           .DM_WE(DM_WE),
                        .ADDR_WE(ADDR_WE),
     		           .SR_WE(SR_WE));
@@ -36,7 +34,7 @@ module testfsm();
         $dumpvars();
 
         $display(" clk  |   pclk   |  pload |     pin      |  sin  |      pout     |  sout  |  expected");
-        
+
         // Initial Conditions time = 0
         clk=1; peripheralClkEdge = 0; msb_sr = 0; c_cs = 1; #5
 
@@ -182,10 +180,9 @@ module testfsm();
         peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
         peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
         peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
-    
-      
+
+
         #10 $finish;
     end
 
 endmodule
-
