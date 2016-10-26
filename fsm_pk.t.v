@@ -28,7 +28,7 @@ module testfsm();
     		           .SR_WE(SR_WE));
     always begin
     #1 clk = ~clk;
-    #2 peripheralClkEdge= ~peripheralClkEdge;
+   // #2 peripheralClkEdge= ~peripheralClkEdge;
     end
 
     initial begin
@@ -164,7 +164,10 @@ module testfsm();
         peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
         
 
-clk = 0; peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #4
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #2
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =1; #2
         peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #2
         peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
         peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #2
@@ -259,12 +262,21 @@ clk = 0; peripheralClkEdge = 0; msb_sr = 1; c_cs =1; #4
         peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
         peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #2
         peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #2        
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
         peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #2
         peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
         peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #2
         peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
         peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #2
         peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #2
 
         #20 $finish;
     end

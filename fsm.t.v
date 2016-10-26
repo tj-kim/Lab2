@@ -3,7 +3,7 @@
 //------------------------------------------------------------------------
 `timescale 1ns / 1ps
 
-`include "fsm.v"
+`include "fsm_pk.v"
 
 module testfsm();
 
@@ -41,6 +41,7 @@ module testfsm();
         clk=1; peripheralClkEdge = 0; msb_sr = 0; c_cs = 1; #5
 
         // Testing Write
+        peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
         peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
         peripheralClkEdge = 0; msb_sr = 0; c_cs =0; #5
         peripheralClkEdge = 1; msb_sr = 0; c_cs =0; #2
@@ -78,6 +79,14 @@ module testfsm();
 
 
         // Testing Write
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
+        peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
+        peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
         peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2
         peripheralClkEdge = 0; msb_sr = 1; c_cs =0; #5
         peripheralClkEdge = 1; msb_sr = 1; c_cs =0; #2

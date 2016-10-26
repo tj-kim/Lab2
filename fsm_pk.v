@@ -26,32 +26,37 @@ reg reset_flg;
 initial begin
 counter = 4'b0000;
 counter_reset = 0;
-reset_flg = 0;
+//reset_flg = 0;
 end
 
 
 
 always @(posedge clk) begin
 
-	if (counter_reset) begin
-	counter_reset <= 0;
-	counter = 4'b0000;
-	reset_flg <= 1;
-	
-	end
+	//if (counter_reset) begin
+	//counter_reset <= 0;
+	//counter = 4'b0000;
+	//reset_flg <= 1;
+	//end
 
 	
-	if (c_cs) begin
-		state <= GET;
-		counter <= 4'b0000;
-		MISO_BUFF = 0;
-		DM_WE =0;
-		ADDR_WE =0;
-		SR_WE =0;
-	end
 
 	if (peripheralClkEdge && !counter_reset) begin
 		counter <= counter + 1;
+	end 
+
+	if(counter_reset || c_cs ) begin
+		counter <=0;
+		counter_reset <= 0;
+	end
+
+	if (c_cs) begin
+		state <= GET;
+		counter <= 4'b0000;
+		MISO_BUFF <= 0;
+		DM_WE <=0;
+		ADDR_WE <=0;
+		SR_WE <=0;
 	end
 
 	else begin
@@ -67,13 +72,14 @@ always @(posedge clk) begin
 			end
 
 			GOT: begin
-				if (msb_sr==1) begin
+				if (msb_sr ) begin	// && reset_flg
 					state <= READ1;
+					//reset_flg <=0;
 				end
 				else begin
-					if (!msb_sr && reset_flg) begin
+					if (!msb_sr ) begin // && reset_flg
 						state <= WRITE1;
-						reset_flg <=0;
+						// reset_flg <=0;
 					end
 				end
 			end
@@ -83,6 +89,7 @@ always @(posedge clk) begin
 			end
 
 			READ2: begin
+				// reset_flg <= 0;
 				state <= READ3;
 			end
 
@@ -99,10 +106,10 @@ always @(posedge clk) begin
 			WRITE1: begin
 				if (counter == 4'b1000) begin
 					state <= WRITE2;
-					counter_reset <= 1;
+					// counter_reset <= 1;
 				end
 				else begin
-					counter_reset <=0;
+					// counter_reset <=0;
 					state <= WRITE1;
 					//counter <= counter + 1;
 				end
@@ -113,10 +120,10 @@ always @(posedge clk) begin
 			end
 
 			DONE: begin
-				if (reset_flg); begin
+				// if (reset_flg); begin
 					state <= GET;
-					reset_flg <=0;
-				end
+					// reset_flg <=0;
+				// end
 			end
 		endcase
 //end // @ peripheralclkedge
@@ -125,30 +132,54 @@ end
 always @(state) begin
 	case (state)
 		GET: begin
+			MISO_BUFF <= 0;
+			DM_WE <=0;
+			ADDR_WE <=0;
+			SR_WE <=0;
 		end
 
 		GOT: begin
+			MISO_BUFF <= 0;
 			ADDR_WE <= 1;
+			DM_WE <=0;
+			SR_WE <=0;
 			counter_reset <= 1;
+			counter <= 4'b0000;
 		end
 
 		READ1: begin
-
+			MISO_BUFF <= 0;
+			DM_WE <=0;
+			ADDR_WE <=0;
+			SR_WE <=0;
 		end
 
 		READ2: begin
-			SR_WE <= 1;
+			MISO_BUFF <= 0;
+			DM_WE <=0;
+			ADDR_WE <=0;
+			SR_WE <=1;
 		end
 
 		READ3: begin
 			MISO_BUFF <=1;
+			DM_WE <=0;
+			ADDR_WE <=0;
+			SR_WE <=0;
 		end
 
 		WRITE1: begin
+			MISO_BUFF <= 0;
+			DM_WE <=0;
+			ADDR_WE <=0;
+			SR_WE <=0;
 		end
 
 		WRITE2: begin
-			DM_WE <= 1;
+			MISO_BUFF <= 0;
+			DM_WE <=1;
+			ADDR_WE <=0;
+			SR_WE <=0;
 		end
 
 		DONE: begin
@@ -156,7 +187,7 @@ always @(state) begin
 			DM_WE <=0;
 			ADDR_WE <=0;
 			SR_WE <=0;
-			counter_reset <= 1;
+			counter <= 4'b0000;
 		end
 	endcase
 end // @ state
