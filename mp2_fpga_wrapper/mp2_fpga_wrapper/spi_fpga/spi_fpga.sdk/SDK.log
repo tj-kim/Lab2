@@ -501,3 +501,302 @@ com.xilinx.sdk.targetmanager.TMException: Connection to Board Failed
 02:17:20 INFO  : Launching XSDB server: xsdb -n -interactive /vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/temp_xsdb_launch_script.tcl
 02:17:24 INFO  : XSDB server has started successfully.
 02:17:27 INFO  : Processing command line option -hwspec /vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper.hdf.
+02:52:15 INFO  : Launching XSDB server: xsdb -n -interactive /vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/temp_xsdb_launch_script.tcl
+02:52:18 INFO  : XSDB server has started successfully.
+02:52:21 INFO  : Processing command line option -hwspec /vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper.hdf.
+02:52:21 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_3.
+02:52:35 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1476668582000,  Project:1477532513000
+02:52:35 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_3' is different from /vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper.hdf.
+02:52:51 INFO  : Copied contents of /vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_3/system.hdf.
+02:53:00 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+02:53:02 INFO  : Clearing existing target manager status.
+02:53:06 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+02:53:06 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+02:58:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:58:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279651540A" && level==0} -index 1' command is executed.
+02:58:20 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_1/design_1_wrapper.bit"
+02:58:42 INFO  : Processor reset is completed for ps7_cortexa9_0
+03:00:19 INFO  : Processor reset is completed for ps7_cortexa9_0
+03:01:26 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+03:01:30 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doProcessorReset(TM.java:1011)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:534)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+03:01:45 INFO  : Processor reset is completed for ps7_cortexa9_0
+03:01:52 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+03:01:55 INFO  : Processor reset is completed for ps7_cortexa9_0
+03:02:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:02:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279651540A" && level==0} -index 1' command is executed.
+03:02:06 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_1/design_1_wrapper.bit"
+03:02:10 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+03:02:13 INFO  : Processor reset is completed for ps7_cortexa9_0
+03:02:48 INFO  : Processor reset is completed for ps7_cortexa9_0
+03:04:56 ERROR : Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Unknown Error Occured
+    Cable is not powered-on
+
+03:04:56 ERROR : Unexpected error while launching program.
+com.xilinx.sdk.targetmanager.TMException: Connection to Board Failed
+
+
+    Unknown Error Occured
+    Cable is not powered-on
+
+	at com.xilinx.sdk.targetmanager.internal.TM.isFPGAConfigured(TM.java:374)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.isFpgaConfigured(XilinxAppLaunchConfigurationDelegate.java:409)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:303)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+03:07:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:07:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279651540A" && level==0} -index 1' command is executed.
+03:07:18 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_1/design_1_wrapper.bit"
+03:07:40 INFO  : Processor reset is completed for ps7_cortexa9_0
+03:09:29 INFO  : System reset is completed.
+03:09:33 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:09:36 INFO  : ps7_init is completed.
+03:09:36 INFO  : ps7_post_config is completed.
+03:10:50 INFO  : System reset is completed.
+03:10:55 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:10:57 INFO  : ps7_init is completed.
+03:10:58 INFO  : ps7_post_config is completed.
+03:10:58 ERROR : Unexpected error while opening JTAG UART: 
+java.lang.RuntimeException: Error while opening JTAG UART server: MDM Uart NOT Present in the System
+Could not detect MDM peripheral on hardware. Please check:
+    1. If FPGA is configured correctly
+    2. MDM Core is instantiated in the design
+    3. If the correct FPGA is referred, in case of multiple FPGAs
+    4. If the correct MDM is referred, in case of a multiple MDM system
+    
+
+	at com.xilinx.sdk.targetmanager.internal.TM.startJTAGUARTServer(TM.java:951)
+	at com.xilinx.sdk.debug.core.internal.comm.JTAGUARTStreamsProxy.<init>(JTAGUARTStreamsProxy.java:32)
+	at com.xilinx.sdk.debug.core.internal.RemoteProcess.createStreamsProxy(RemoteProcess.java:164)
+	at com.xilinx.sdk.debug.core.internal.RemoteProcess.<init>(RemoteProcess.java:65)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(AppRunner.java:91)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:637)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+03:11:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:11:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279651540A" && level==0} -index 1' command is executed.
+03:11:32 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_1/design_1_wrapper.bit"
+03:11:46 ERROR : Unexpected error while launching program.
+com.xilinx.sdk.targetmanager.TMException: 
+    Unknown Error Occured
+    Cable is not powered-on
+
+	at com.xilinx.sdk.targetmanager.internal.TM.connectToProcessor(TM.java:484)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:464)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+03:12:00 ERROR : Unexpected error while launching program.
+com.xilinx.sdk.targetmanager.TMException: 
+    Unknown Error Occured
+    Cable is not powered-on
+
+	at com.xilinx.sdk.targetmanager.internal.TM.connectToProcessor(TM.java:484)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:464)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+03:12:35 INFO  : System reset is completed.
+03:12:39 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:12:42 INFO  : ps7_init is completed.
+03:12:42 INFO  : ps7_post_config is completed.
+03:12:42 ERROR : Unexpected error while opening JTAG UART: 
+java.lang.RuntimeException: Error while opening JTAG UART server: MDM Uart NOT Present in the System
+Could not detect MDM peripheral on hardware. Please check:
+    1. If FPGA is configured correctly
+    2. MDM Core is instantiated in the design
+    3. If the correct FPGA is referred, in case of multiple FPGAs
+    4. If the correct MDM is referred, in case of a multiple MDM system
+    
+
+	at com.xilinx.sdk.targetmanager.internal.TM.startJTAGUARTServer(TM.java:951)
+	at com.xilinx.sdk.debug.core.internal.comm.JTAGUARTStreamsProxy.<init>(JTAGUARTStreamsProxy.java:32)
+	at com.xilinx.sdk.debug.core.internal.RemoteProcess.createStreamsProxy(RemoteProcess.java:164)
+	at com.xilinx.sdk.debug.core.internal.RemoteProcess.<init>(RemoteProcess.java:65)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(AppRunner.java:91)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:637)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+03:14:40 INFO  : System reset is completed.
+03:14:46 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:14:48 INFO  : ps7_init is completed.
+03:14:49 INFO  : ps7_post_config is completed.
+03:19:47 INFO  : System reset is completed.
+03:19:50 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:19:53 INFO  : ps7_init is completed.
+03:19:53 INFO  : ps7_post_config is completed.
+03:20:51 INFO  : System reset is completed.
+03:20:54 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:20:56 INFO  : ps7_init is completed.
+03:20:57 INFO  : ps7_post_config is completed.
+03:21:18 INFO  : System reset is completed.
+03:21:22 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:21:25 INFO  : ps7_init is completed.
+03:21:25 INFO  : ps7_post_config is completed.
+03:24:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:24:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279651540A" && level==0} -index 1' command is executed.
+03:24:17 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_1/design_1_wrapper.bit"
+03:24:32 INFO  : System reset is completed.
+03:24:36 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:24:40 INFO  : ps7_init is completed.
+03:24:40 INFO  : ps7_post_config is completed.
+03:25:38 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+03:25:43 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+03:25:47 INFO  : System reset is completed.
+03:25:53 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:25:56 INFO  : ps7_init is completed.
+03:25:56 INFO  : ps7_post_config is completed.
+03:26:34 INFO  : System reset is completed.
+03:26:39 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:26:42 INFO  : ps7_init is completed.
+03:26:42 INFO  : ps7_post_config is completed.
+03:28:47 INFO  : System reset is completed.
+03:28:51 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:28:54 INFO  : ps7_init is completed.
+03:28:54 INFO  : ps7_post_config is completed.
+03:32:45 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+03:32:47 INFO  : System reset is completed.
+03:32:53 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:32:56 INFO  : ps7_init is completed.
+03:32:56 INFO  : ps7_post_config is completed.
+03:33:09 INFO  : System reset is completed.
+03:33:13 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:33:16 INFO  : ps7_init is completed.
+03:33:16 INFO  : ps7_post_config is completed.
+03:33:37 INFO  : System reset is completed.
+03:33:41 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:33:44 INFO  : ps7_init is completed.
+03:33:44 INFO  : ps7_post_config is completed.
+03:37:56 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+03:37:58 INFO  : System reset is completed.
+03:38:03 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:38:05 INFO  : ps7_init is completed.
+03:38:05 INFO  : ps7_post_config is completed.
+03:38:50 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+03:38:53 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doSystemReset(TM.java:988)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:469)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.debugApplication(XilinxAppLaunchConfigurationDelegate.java:701)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:311)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+03:39:04 INFO  : System reset is completed.
+03:39:09 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:39:12 INFO  : ps7_init is completed.
+03:39:12 INFO  : ps7_post_config is completed.
+03:42:29 INFO  : System reset is completed.
+03:42:34 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:42:37 INFO  : ps7_init is completed.
+03:42:38 INFO  : ps7_post_config is completed.
+03:53:27 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+03:53:30 INFO  : System reset is completed.
+03:53:33 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:53:37 INFO  : ps7_init is completed.
+03:53:37 INFO  : ps7_post_config is completed.
+03:54:07 INFO  : System reset is completed.
+03:54:11 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:54:14 INFO  : ps7_init is completed.
+03:54:14 INFO  : ps7_post_config is completed.
+03:54:54 INFO  : System reset is completed.
+03:54:58 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:55:01 INFO  : ps7_init is completed.
+03:55:01 INFO  : ps7_post_config is completed.
+03:56:38 INFO  : System reset is completed.
+03:56:42 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+03:56:44 INFO  : ps7_init is completed.
+03:56:44 INFO  : ps7_post_config is completed.
+04:00:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:00:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279651540A" && level==0} -index 1' command is executed.
+04:00:17 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_1/design_1_wrapper.bit"
+04:00:38 INFO  : System reset is completed.
+04:00:42 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+04:00:45 INFO  : ps7_init is completed.
+04:00:45 INFO  : ps7_post_config is completed.
+04:02:15 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doSystemReset(TM.java:988)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:469)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.debugApplication(XilinxAppLaunchConfigurationDelegate.java:701)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:311)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+04:02:23 INFO  : System reset is completed.
+04:02:27 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+04:02:30 INFO  : ps7_init is completed.
+04:02:30 INFO  : ps7_post_config is completed.
+04:03:19 INFO  : System reset is completed.
+04:03:22 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+04:03:25 INFO  : ps7_init is completed.
+04:03:25 INFO  : ps7_post_config is completed.
+04:04:07 INFO  : System reset is completed.
+04:04:11 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+04:04:14 INFO  : ps7_init is completed.
+04:04:14 INFO  : ps7_post_config is completed.
+04:05:13 INFO  : System reset is completed.
+04:05:17 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+04:05:20 INFO  : ps7_init is completed.
+04:05:20 INFO  : ps7_post_config is completed.
+04:06:15 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+04:06:18 INFO  : System reset is completed.
+04:06:23 INFO  : FPGA configured successfully with bitstream "/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+04:06:25 INFO  : ps7_init is completed.
+04:06:26 INFO  : ps7_post_config is completed.
+04:07:12 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 

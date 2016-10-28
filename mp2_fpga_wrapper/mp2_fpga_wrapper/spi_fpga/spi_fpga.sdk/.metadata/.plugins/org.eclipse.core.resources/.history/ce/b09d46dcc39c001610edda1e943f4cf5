@@ -80,11 +80,11 @@ int main()
     /*The current test writes the value 10 to address 0 by writing over SPI
     then checks to see what it gets from address 0 by reading over SPI.*/
     int addr = 0;
-    int value = 64;
+    int value = 123;
 	spi_write(&SpiInstance, addr, value); //spi_write needs to be filled in
 	u8 res = spi_read(&SpiInstance, addr); //spi_read has been provided
 
-	if (res != value) {
+	if (res == value) {
 	    LED_data |= 0x1<<2;
 	    XGpio_DiscreteWrite(&GpioInstance, LED_CHANNEL, LED_data);
 	    //You need to insert a breakpoint here to check the variables if your tester breaks.

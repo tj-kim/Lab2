@@ -1,26 +1,6 @@
-02:17:52 **** Build of configuration Debug for project corespi ****
+04:06:14 **** Incremental Build of configuration Debug for project corespi ****
 make all 
-Building file: ../src/platform.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-Finished building: ../src/platform.c
- 
-Building file: ../src/spi_tester.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
-Finished building: ../src/spi_tester.c
- 
-Building target: corespi.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: corespi.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  32448	   1200	  22692	  56340	   dc14	corespi.elf
-Finished building: corespi.elf.size
- 
+make: Nothing to be done for `all'.
 
-02:17:53 Build Finished (took 1s.551ms)
+04:06:14 Build Finished (took 87ms)
 
