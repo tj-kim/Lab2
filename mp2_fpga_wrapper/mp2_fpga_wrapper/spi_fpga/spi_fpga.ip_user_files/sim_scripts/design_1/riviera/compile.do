@@ -219,6 +219,13 @@ vlog -work axi_crossbar_v2_1_10 -v2k5 "+incdir+../../../ipstatic/axi_infrastruct
 
 vlog -work xil_defaultlib -v2k5 "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
 "../../../bd/design_1/ip/design_1_xbar_0_1/sim/design_1_xbar_0.v" \
+"../../../bd/design_1/hdl/design_1.v" \
+"../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/Lab2_Final.srcs/sources_1/imports/Lab2/fsm.v" \
+"../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/Lab2_Final.srcs/sources_1/imports/Lab2/shiftregister.v" \
+"../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/Lab2_Final.srcs/sources_1/imports/Lab2/datamemory.v" \
+"../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/Lab2_Final.srcs/sources_1/imports/Lab2/inputconditioner.v" \
+"../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/Lab2_Final.srcs/sources_1/imports/Lab2/spimemory.v" \
+"../../../bd/design_1/ip/design_1_spiMemory_0_0/sim/design_1_spiMemory_0_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_9 -v2k5 "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
 "../../../ipstatic/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_a_axi3_conv.v" \
@@ -243,7 +250,6 @@ vlog -work axi_protocol_converter_v2_1_9 -v2k5 "+incdir+../../../ipstatic/axi_in
 
 vlog -work xil_defaultlib -v2k5 "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
 "../../../bd/design_1/ip/design_1_auto_pc_0_1/sim/design_1_auto_pc_0.v" \
-"../../../bd/design_1/hdl/design_1.v" \
 
 vlog -work xil_defaultlib "glbl.v"
 

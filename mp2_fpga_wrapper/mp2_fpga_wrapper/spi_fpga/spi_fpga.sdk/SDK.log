@@ -498,3 +498,6 @@ com.xilinx.sdk.targetmanager.TMException: Connection to Board Failed
 01:48:47 INFO  : XSDB server has started successfully.
 01:48:48 INFO  : Processing command line option -hwspec /vagrant/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper.hdf.
 01:48:51 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_2.
+02:17:20 INFO  : Launching XSDB server: xsdb -n -interactive /vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/temp_xsdb_launch_script.tcl
+02:17:24 INFO  : XSDB server has started successfully.
+02:17:27 INFO  : Processing command line option -hwspec /vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.sdk/design_1_wrapper.hdf.
