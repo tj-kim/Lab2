@@ -18,7 +18,7 @@ And given that the wait time is unit 10
 How long in seconds will it take until we reach the wait time with our clock?
 
 
-1s/(50*10^6) cycles * 10 cycles = 1s/(5*10^6) = 0.2 us
+1s/(50 x 10^6) cycles * 10 cycles = 1s/(5 x 10^6) = 0.2 us
 
 
 ### Circuit Diagram
