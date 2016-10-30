@@ -206,7 +206,7 @@ We read from the register that was just written to (0x55), and got the value tha
 
 
 ### Full System on FPGA
-We uploaded this schematic to the hardware, and used the following test cases:
+We uploaded this schematic to the hardware, and used these test cases. We wrote code in C to automate this test pattern.
 
 
 * Write 0xCA to 0x55, read from 0x55
