@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Oct 27 02:15:13 2016" VIVADOVERSION="2016.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Oct 30 03:27:29 2016" VIVADOVERSION="2016.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo:part0:1.0" DEVICE="7z010" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -576,18 +576,18 @@
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="io0_i" SIGIS="undef"/>
+        <PORT DIR="I" NAME="io0_i" SIGIS="undef" SIGNAME="spiMemory_0_miso_pin">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spiMemory_0" PORT="miso_pin"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="io0_o" SIGIS="undef" SIGNAME="axi_quad_spi_0_io0_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="spiMemory_0" PORT="mosi_pin"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="io0_t" SIGIS="undef"/>
-        <PORT DIR="I" NAME="io1_i" SIGIS="undef" SIGNAME="spiMemory_0_miso_pin">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="spiMemory_0" PORT="miso_pin"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="I" NAME="io1_i" SIGIS="undef"/>
         <PORT DIR="O" NAME="io1_o" SIGIS="undef"/>
         <PORT DIR="O" NAME="io1_t" SIGIS="undef"/>
         <PORT DIR="I" NAME="sck_i" SIGIS="undef"/>
@@ -2890,7 +2890,7 @@
         </PORT>
         <PORT DIR="O" NAME="miso_pin" SIGIS="undef" SIGNAME="spiMemory_0_miso_pin">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io1_i"/>
+            <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io0_i"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="mosi_pin" SIGIS="undef" SIGNAME="axi_quad_spi_0_io0_o">

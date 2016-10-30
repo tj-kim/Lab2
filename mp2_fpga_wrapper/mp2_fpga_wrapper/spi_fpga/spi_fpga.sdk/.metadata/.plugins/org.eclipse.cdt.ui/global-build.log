@@ -73,7 +73,7 @@ arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
   32448	   1200	  22692	  56340	   dc14	corespi.elf
 Finished building: corespi.elf.size
  
-02:17:24 **** Build of project corespi_bsp ****
+03:35:46 **** Build of project corespi_bsp ****
 make -k all 
 Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_0/src
 make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
@@ -166,7 +166,7 @@ Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_2/src
 make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
 Compiling xadcps
 Finished building libraries
-02:17:52 **** Build of configuration Debug for project corespi ****
+03:36:16 **** Build of configuration Debug for project corespi ****
 make all 
 Building file: ../src/platform.c
 Invoking: ARM gcc compiler
@@ -189,375 +189,7 @@ arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
   32448	   1200	  22692	  56340	   dc14	corespi.elf
 Finished building: corespi.elf.size
  
-02:52:27 **** Auto Build of project corespi_bsp ****
-make -k all 
-Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_0/src
-make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_1/src
-make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_3/src
-make -C ps7_cortexa9_0/libsrc/devcfg_v3_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_1/src
-make -C ps7_cortexa9_0/libsrc/dmaps_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_0/src
-make -C ps7_cortexa9_0/libsrc/emacps_v3_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_0/src
-make -C ps7_cortexa9_0/libsrc/gpiops_v3_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_0/src
-make -C ps7_cortexa9_0/libsrc/gpio_v4_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_2/src
-make -C ps7_cortexa9_0/libsrc/qspips_v3_2/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_0/src
-make -C ps7_cortexa9_0/libsrc/scugic_v3_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
-make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
-make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/sdps_v2_4/src
-make -C ps7_cortexa9_0/libsrc/sdps_v2_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/spi_v4_1/src
-make -C ps7_cortexa9_0/libsrc/spi_v4_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/standalone_v5_1/src
-make -C ps7_cortexa9_0/libsrc/standalone_v5_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_0/src
-make -C ps7_cortexa9_0/libsrc/ttcps_v3_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_0/src
-make -C ps7_cortexa9_0/libsrc/uartps_v3_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_2/src
-make -C ps7_cortexa9_0/libsrc/usbps_v2_2/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_2/src
-make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s include  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_0/src
-make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling coresightps_dcc
-Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_1/src
-make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling cpu_cortexa9
-Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_3/src
-make -C ps7_cortexa9_0/libsrc/devcfg_v3_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling devcfg
-Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_1/src
-make -C ps7_cortexa9_0/libsrc/dmaps_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling dmaps
-Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_0/src
-make -C ps7_cortexa9_0/libsrc/emacps_v3_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling emacps
-Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_0/src
-make -C ps7_cortexa9_0/libsrc/gpiops_v3_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling gpiops
-Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_0/src
-make -C ps7_cortexa9_0/libsrc/gpio_v4_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling gpio
-Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_2/src
-make -C ps7_cortexa9_0/libsrc/qspips_v3_2/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling qspips
-Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_0/src
-make -C ps7_cortexa9_0/libsrc/scugic_v3_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling scugic
-Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
-make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling scutimer
-Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
-make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling scuwdt
-Running Make libs in ps7_cortexa9_0/libsrc/sdps_v2_4/src
-make -C ps7_cortexa9_0/libsrc/sdps_v2_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling sdps
-Running Make libs in ps7_cortexa9_0/libsrc/spi_v4_1/src
-make -C ps7_cortexa9_0/libsrc/spi_v4_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling spi
-Running Make libs in ps7_cortexa9_0/libsrc/standalone_v5_1/src
-make -C ps7_cortexa9_0/libsrc/standalone_v5_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling standalone
-Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_0/src
-make -C ps7_cortexa9_0/libsrc/ttcps_v3_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling ttcps
-Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_0/src
-make -C ps7_cortexa9_0/libsrc/uartps_v3_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling uartps
-Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_2/src
-make -C ps7_cortexa9_0/libsrc/usbps_v2_2/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling usbps
-Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_2/src
-make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
-Compiling xadcps
-Finished building libraries
-02:52:52 **** Auto Build of configuration Debug for project corespi ****
-make all 
-Building file: ../src/platform.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-Finished building: ../src/platform.c
- 
-Building file: ../src/spi_tester.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
-Finished building: ../src/spi_tester.c
- 
-Building target: corespi.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: corespi.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  32448	   1200	  22692	  56340	   dc14	corespi.elf
-Finished building: corespi.elf.size
- 
-02:54:13 **** Auto Build of configuration Debug for project corespi ****
-make all 
-Building file: ../src/spi_tester.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
-Finished building: ../src/spi_tester.c
- 
-Building target: corespi.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: corespi.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29864	   1192	  22692	  53748	   d1f4	corespi.elf
-Finished building: corespi.elf.size
- 
-02:55:42 **** Auto Build of configuration Debug for project corespi ****
-make all 
-Building file: ../src/spi_tester.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
-Finished building: ../src/spi_tester.c
- 
-Building target: corespi.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: corespi.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29928	   1192	  22692	  53812	   d234	corespi.elf
-Finished building: corespi.elf.size
- 
-02:58:33 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:00:17 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:01:25 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:01:44 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:01:51 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:02:10 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:02:46 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:04:55 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:07:37 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:09:26 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:10:49 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:11:45 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:11:59 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:12:33 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:14:38 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:19:44 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:20:48 **** Auto Build of configuration Debug for project corespi ****
-make all 
-Building file: ../src/spi_tester.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
-Finished building: ../src/spi_tester.c
- 
-Building target: corespi.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: corespi.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29928	   1192	  22692	  53812	   d234	corespi.elf
-Finished building: corespi.elf.size
- 
-03:20:49 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:21:16 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:21:27 **** Auto Build of configuration Debug for project corespi ****
-make all 
-Building file: ../src/spi_tester.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
-Finished building: ../src/spi_tester.c
- 
-Building target: corespi.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: corespi.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29928	   1192	  22692	  53812	   d234	corespi.elf
-Finished building: corespi.elf.size
- 
-03:24:30 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:25:34 **** Auto Build of configuration Debug for project corespi ****
-make all 
-Building file: ../src/spi_tester.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
-Finished building: ../src/spi_tester.c
- 
-Building target: corespi.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: corespi.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29928	   1192	  22692	  53812	   d234	corespi.elf
-Finished building: corespi.elf.size
- 
-03:25:37 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:25:43 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:26:18 **** Auto Build of configuration Debug for project corespi ****
-make all 
-Building file: ../src/spi_tester.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
-Finished building: ../src/spi_tester.c
- 
-Building target: corespi.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: corespi.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29928	   1192	  22692	  53812	   d234	corespi.elf
-Finished building: corespi.elf.size
- 
-03:26:32 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:28:45 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:32:44 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:33:07 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:33:30 **** Auto Build of configuration Debug for project corespi ****
-make all 
-Building file: ../src/spi_tester.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
-Finished building: ../src/spi_tester.c
- 
-Building target: corespi.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: corespi.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29928	   1192	  22692	  53812	   d234	corespi.elf
-Finished building: corespi.elf.size
- 
-03:33:34 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:37:52 **** Auto Build of configuration Debug for project corespi ****
-make all 
-Building file: ../src/spi_tester.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
-Finished building: ../src/spi_tester.c
- 
-Building target: corespi.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: corespi.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29916	   1192	  22692	  53800	   d228	corespi.elf
-Finished building: corespi.elf.size
- 
-03:37:56 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:38:48 **** Auto Build of configuration Debug for project corespi ****
-make all 
-Building file: ../src/spi_tester.c
-Invoking: ARM gcc compiler
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
-Finished building: ../src/spi_tester.c
- 
-Building target: corespi.elf
-Invoking: ARM gcc linker
-arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: corespi.elf
- 
-Invoking: ARM Print Size
-arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  29916	   1192	  22692	  53800	   d228	corespi.elf
-Finished building: corespi.elf.size
- 
-03:38:50 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:39:02 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:42:27 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:53:23 **** Auto Build of configuration Debug for project corespi ****
+03:36:29 **** Auto Build of configuration Debug for project corespi ****
 make all 
 Building file: ../src/spi_tester.c
 Invoking: ARM gcc compiler
@@ -575,34 +207,13 @@ arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
   29912	   1192	  22692	  53796	   d224	corespi.elf
 Finished building: corespi.elf.size
  
-03:53:26 **** Incremental Build of configuration Debug for project corespi ****
+03:37:45 **** Incremental Build of configuration Debug for project corespi ****
 make all 
 make: Nothing to be done for `all'.
-03:54:05 **** Incremental Build of configuration Debug for project corespi ****
+03:38:44 **** Incremental Build of configuration Debug for project corespi ****
 make all 
 make: Nothing to be done for `all'.
-03:54:52 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-03:56:36 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-04:00:36 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-04:02:13 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-04:02:21 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-04:03:17 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-04:04:04 **** Incremental Build of configuration Debug for project corespi ****
-make all 
-make: Nothing to be done for `all'.
-04:05:06 **** Auto Build of configuration Debug for project corespi ****
+03:40:23 **** Auto Build of configuration Debug for project corespi ****
 make all 
 Building file: ../src/spi_tester.c
 Invoking: ARM gcc compiler
@@ -620,10 +231,163 @@ arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
   29912	   1192	  22692	  53796	   d224	corespi.elf
 Finished building: corespi.elf.size
  
-04:05:10 **** Incremental Build of configuration Debug for project corespi ****
+03:40:26 **** Incremental Build of configuration Debug for project corespi ****
 make all 
 make: Nothing to be done for `all'.
-04:06:11 **** Auto Build of configuration Debug for project corespi ****
+03:47:51 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+03:48:31 **** Auto Build of configuration Debug for project corespi ****
+make all 
+Building file: ../src/spi_tester.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
+../src/spi_tester.c: In function 'main':
+../src/spi_tester.c:82:8: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+     u8 res;
+        ^
+Finished building: ../src/spi_tester.c
+ 
+Building target: corespi.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: corespi.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29892	   1192	  22692	  53776	   d210	corespi.elf
+Finished building: corespi.elf.size
+ 
+03:48:34 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+03:49:05 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+03:49:20 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+03:50:40 **** Auto Build of configuration Debug for project corespi ****
+make all 
+Building file: ../src/spi_tester.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
+../src/spi_tester.c: In function 'main':
+../src/spi_tester.c:87:8: error: redeclaration of 'res' with no linkage
+     u8 res = spi_read(&SpiInstance, addr);
+        ^
+../src/spi_tester.c:82:8: note: previous declaration of 'res' was here
+     u8 res;
+        ^
+../src/spi_tester.c:91:8: error: redefinition of 'res'
+     u8 res = spi_read(&SpiInstance, addr);
+        ^
+../src/spi_tester.c:87:8: note: previous definition of 'res' was here
+     u8 res = spi_read(&SpiInstance, addr);
+        ^
+../src/spi_tester.c:91:8: warning: unused variable 'res' [-Wunused-variable]
+     u8 res = spi_read(&SpiInstance, addr);
+        ^
+make: *** [src/spi_tester.o] Error 1
+03:50:42 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+Building file: ../src/spi_tester.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
+../src/spi_tester.c: In function 'main':
+../src/spi_tester.c:87:8: error: redeclaration of 'res' with no linkage
+     u8 res = spi_read(&SpiInstance, addr);
+        ^
+../src/spi_tester.c:82:8: note: previous declaration of 'res' was here
+     u8 res;
+        ^
+../src/spi_tester.c:91:8: error: redefinition of 'res'
+     u8 res = spi_read(&SpiInstance, addr);
+        ^
+../src/spi_tester.c:87:8: note: previous definition of 'res' was here
+     u8 res = spi_read(&SpiInstance, addr);
+        ^
+../src/spi_tester.c:91:8: warning: unused variable 'res' [-Wunused-variable]
+     u8 res = spi_read(&SpiInstance, addr);
+        ^
+make: *** [src/spi_tester.o] Error 1
+03:51:07 **** Auto Build of configuration Debug for project corespi ****
+make all 
+Building file: ../src/spi_tester.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
+../src/spi_tester.c: In function 'main':
+../src/spi_tester.c:82:8: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+     u8 res;
+        ^
+Finished building: ../src/spi_tester.c
+ 
+Building target: corespi.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: corespi.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29892	   1192	  22692	  53776	   d210	corespi.elf
+Finished building: corespi.elf.size
+ 
+03:51:26 **** Auto Build of configuration Debug for project corespi ****
+make all 
+Building file: ../src/spi_tester.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
+../src/spi_tester.c: In function 'main':
+../src/spi_tester.c:82:8: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+     u8 res;
+        ^
+Finished building: ../src/spi_tester.c
+ 
+Building target: corespi.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: corespi.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29900	   1192	  22692	  53784	   d218	corespi.elf
+Finished building: corespi.elf.size
+ 
+03:51:30 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+03:52:18 **** Auto Build of configuration Debug for project corespi ****
+make all 
+Building file: ../src/spi_tester.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
+../src/spi_tester.c: In function 'main':
+../src/spi_tester.c:82:8: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+     u8 res;
+        ^
+Finished building: ../src/spi_tester.c
+ 
+Building target: corespi.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: corespi.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29936	   1192	  22692	  53820	   d23c	corespi.elf
+Finished building: corespi.elf.size
+ 
+03:52:24 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+03:56:01 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+03:58:56 **** Auto Build of configuration Debug for project corespi ****
 make all 
 Building file: ../src/spi_tester.c
 Invoking: ARM gcc compiler
@@ -641,6 +405,210 @@ arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
   29912	   1192	  22692	  53796	   d224	corespi.elf
 Finished building: corespi.elf.size
  
-04:06:14 **** Incremental Build of configuration Debug for project corespi ****
+03:59:00 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+04:00:49 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+04:06:49 **** Auto Build of configuration Debug for project corespi ****
+make all 
+Building file: ../src/spi_tester.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
+Finished building: ../src/spi_tester.c
+ 
+Building target: corespi.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: corespi.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30056	   1192	  22692	  53940	   d2b4	corespi.elf
+Finished building: corespi.elf.size
+ 
+04:06:53 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+04:07:22 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+04:07:54 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+04:08:36 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+04:10:04 **** Auto Build of configuration Debug for project corespi ****
+make all 
+Building file: ../src/spi_tester.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
+Finished building: ../src/spi_tester.c
+ 
+Building target: corespi.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: corespi.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30056	   1192	  22692	  53940	   d2b4	corespi.elf
+Finished building: corespi.elf.size
+ 
+04:10:13 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+04:11:07 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+04:11:16 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+04:12:04 **** Auto Build of configuration Debug for project corespi ****
+make all 
+Building file: ../src/spi_tester.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
+Finished building: ../src/spi_tester.c
+ 
+Building target: corespi.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: corespi.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30056	   1192	  22692	  53940	   d2b4	corespi.elf
+Finished building: corespi.elf.size
+ 
+04:12:42 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+04:13:13 **** Auto Build of configuration Debug for project corespi ****
+make all 
+Building file: ../src/spi_tester.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
+Finished building: ../src/spi_tester.c
+ 
+Building target: corespi.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: corespi.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30056	   1192	  22692	  53940	   d2b4	corespi.elf
+Finished building: corespi.elf.size
+ 
+04:13:21 **** Auto Build of configuration Debug for project corespi ****
+make all 
+Building file: ../src/spi_tester.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
+Finished building: ../src/spi_tester.c
+ 
+Building target: corespi.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: corespi.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30056	   1192	  22692	  53940	   d2b4	corespi.elf
+Finished building: corespi.elf.size
+ 
+04:13:24 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+04:14:57 **** Auto Build of configuration Debug for project corespi ****
+make all 
+Building file: ../src/spi_tester.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
+Finished building: ../src/spi_tester.c
+ 
+Building target: corespi.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: corespi.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30164	   1192	  22692	  54048	   d320	corespi.elf
+Finished building: corespi.elf.size
+ 
+04:14:59 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+04:16:09 **** Auto Build of configuration Debug for project corespi ****
+make all 
+Building file: ../src/spi_tester.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
+Finished building: ../src/spi_tester.c
+ 
+Building target: corespi.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: corespi.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30164	   1192	  22692	  54048	   d320	corespi.elf
+Finished building: corespi.elf.size
+ 
+04:16:12 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+04:18:53 **** Auto Build of configuration Debug for project corespi ****
+make all 
+Building file: ../src/spi_tester.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
+Finished building: ../src/spi_tester.c
+ 
+Building target: corespi.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: corespi.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30164	   1192	  22692	  54048	   d320	corespi.elf
+Finished building: corespi.elf.size
+ 
+04:18:58 **** Incremental Build of configuration Debug for project corespi ****
+make all 
+make: Nothing to be done for `all'.
+04:23:21 **** Auto Build of configuration Debug for project corespi ****
+make all 
+Building file: ../src/spi_tester.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_tester.o" -I../../corespi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_tester.d" -MT"src/spi_tester.o" -o "src/spi_tester.o" "../src/spi_tester.c"
+Finished building: ../src/spi_tester.c
+ 
+Building target: corespi.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../corespi_bsp/ps7_cortexa9_0/lib -o "corespi.elf"  ./src/platform.o ./src/spi_tester.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: corespi.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size corespi.elf  |tee "corespi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30200	   1192	  22692	  54084	   d344	corespi.elf
+Finished building: corespi.elf.size
+ 
+04:23:31 **** Incremental Build of configuration Debug for project corespi ****
 make all 
 make: Nothing to be done for `all'.

@@ -22,7 +22,7 @@
 <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_REGISTER_GROUPS" value=""/>
 <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
 <booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="true"/>
-<stringAttribute key="org.eclipse.cdt.launch.FORMAT" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&lt;contentList&gt;&lt;content id=&quot;res-main-(format)&quot; val=&quot;1&quot;/&gt;&lt;/contentList&gt;"/>
+<stringAttribute key="org.eclipse.cdt.launch.FORMAT" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&lt;contentList&gt;&lt;content id=&quot;addr-main-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;value-main-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;res-main-(format)&quot; val=&quot;4&quot;/&gt;&lt;/contentList&gt;"/>
 <stringAttribute key="org.eclipse.cdt.launch.GLOBAL_VARIABLES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;globalVariableList/&gt;&#10;"/>
 <stringAttribute key="org.eclipse.cdt.launch.MEMORY_BLOCKS" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;memoryBlockExpressionList/&gt;&#10;"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug/corespi.elf"/>
@@ -32,9 +32,9 @@
 <booleanAttribute key="xilinx.profile.enable" value="false"/>
 <stringAttribute key="xilinx.romem.base" value=""/>
 <stringAttribute key="xilinx.romem.size" value=""/>
-<stringAttribute key="xilinx.stdio.baud" value="9600"/>
+<stringAttribute key="xilinx.stdio.baud" value="115200"/>
 <booleanAttribute key="xilinx.stdio.connect" value="false"/>
 <stringAttribute key="xilinx.stdio.port" value="JTAG UART"/>
-<booleanAttribute key="xilinx.xmd.crosstrigger" value="false"/>
+<booleanAttribute key="xilinx.xmd.crosstrigger" value="true"/>
 <booleanAttribute key="xilinx.xmd.safe.mode" value="false"/>
 </launchConfiguration>

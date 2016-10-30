@@ -175,11 +175,11 @@
 -makelib ies/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_xbar_0_1/sim/design_1_xbar_0.v" \
   "../../../bd/design_1/hdl/design_1.v" \
-  "../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/Lab2_Final.srcs/sources_1/imports/Lab2/fsm.v" \
-  "../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/Lab2_Final.srcs/sources_1/imports/Lab2/shiftregister.v" \
-  "../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/Lab2_Final.srcs/sources_1/imports/Lab2/datamemory.v" \
-  "../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/Lab2_Final.srcs/sources_1/imports/Lab2/inputconditioner.v" \
-  "../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/Lab2_Final.srcs/sources_1/imports/Lab2/spimemory.v" \
+  "../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/src/fsm.v" \
+  "../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/src/shiftregister.v" \
+  "../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/src/datamemory.v" \
+  "../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/src/inputconditioner.v" \
+  "../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/src/spimemory.v" \
   "../../../bd/design_1/ip/design_1_spiMemory_0_0/sim/design_1_spiMemory_0_0.v" \
 -endlib
 -makelib ies/axi_protocol_converter_v2_1_9 \

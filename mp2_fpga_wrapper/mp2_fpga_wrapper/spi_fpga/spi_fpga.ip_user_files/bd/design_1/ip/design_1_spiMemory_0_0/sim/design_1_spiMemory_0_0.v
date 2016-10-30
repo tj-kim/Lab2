@@ -48,7 +48,7 @@
 
 
 // IP VLNV: olin.edu:user:spiMemory:1.0
-// IP Revision: 2
+// IP Revision: 1
 
 `timescale 1ns/1ps
 

@@ -382,16 +382,6 @@
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="ARESETN"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>axi_quad_spi_0_io0_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="axi_quad_spi_0" spirit:portRef="io0_o"/>
-        <spirit:internalPortReference spirit:componentRef="spiMemory_0" spirit:portRef="mosi_pin"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>spiMemory_0_miso_pin</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="spiMemory_0" spirit:portRef="miso_pin"/>
-        <spirit:internalPortReference spirit:componentRef="axi_quad_spi_0" spirit:portRef="io1_i"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>axi_quad_spi_0_sck_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_quad_spi_0" spirit:portRef="sck_o"/>
         <spirit:internalPortReference spirit:componentRef="spiMemory_0" spirit:portRef="sclk_pin"/>
@@ -400,6 +390,16 @@
         <spirit:name>axi_quad_spi_0_ss_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_quad_spi_0" spirit:portRef="ss_o"/>
         <spirit:internalPortReference spirit:componentRef="spiMemory_0" spirit:portRef="cs_pin"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>axi_quad_spi_0_io0_o</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="axi_quad_spi_0" spirit:portRef="io0_o"/>
+        <spirit:internalPortReference spirit:componentRef="spiMemory_0" spirit:portRef="mosi_pin"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>spiMemory_0_miso_pin</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="spiMemory_0" spirit:portRef="miso_pin"/>
+        <spirit:internalPortReference spirit:componentRef="axi_quad_spi_0" spirit:portRef="io0_i"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

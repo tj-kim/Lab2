@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/vagrant/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.runs/impl_1'
+HD_PWD='/vagrant/Lab2/mp2_fpga_wrapper/mp2_fpga_wrapper/spi_fpga/spi_fpga.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

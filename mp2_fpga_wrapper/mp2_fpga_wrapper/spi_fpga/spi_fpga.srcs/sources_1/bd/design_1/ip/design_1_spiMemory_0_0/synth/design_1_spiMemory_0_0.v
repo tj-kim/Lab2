@@ -48,7 +48,7 @@
 
 
 // IP VLNV: olin.edu:user:spiMemory:1.0
-// IP Revision: 2
+// IP Revision: 1
 
 (* X_CORE_INFO = "spiMemory,Vivado 2016.2" *)
 (* CHECK_LICENSE_TYPE = "design_1_spiMemory_0_0,spiMemory,{}" *)

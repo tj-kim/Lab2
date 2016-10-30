@@ -44,9 +44,9 @@
  *   uartlite    Configurable only in HW design
  *   ps7_uart    115200 (configured by bootrom/bsp)
  */
-#define SPI_DEVICE_ID		XPAR_SPI_0_DEVICE_ID
-#define GPIO_DEVICE_ID 		XPAR_AXI_GPIO_0_DEVICE_ID
-#define LED_CHANNEL			0x1
+#define SPI_DEVICE_ID        XPAR_SPI_0_DEVICE_ID
+#define GPIO_DEVICE_ID         XPAR_AXI_GPIO_0_DEVICE_ID
+#define LED_CHANNEL            0x1
 
 #include <stdio.h>
 #include "platform.h"
@@ -65,7 +65,7 @@ void delay(int n);
 
 int main()
 {
-	//This is all initialization code, you don't need to modify this
+    //This is all initialization code, you don't need to modify this
     init_platform();
     init_spi(&SpiInstance);
     init_gpio(&GpioInstance);
@@ -76,20 +76,42 @@ int main()
     LED_data |= 0x1<<1;
     XGpio_DiscreteWrite(&GpioInstance, LED_CHANNEL, LED_data);
 
-    //TODO: Create better tests below
-    /*The current test writes the value 10 to address 0 by writing over SPI
-    then checks to see what it gets from address 0 by reading over SPI.*/
-    int addr = 0;
-    int value = 64;
-	spi_write(&SpiInstance, addr, value); //spi_write needs to be filled in
-	u8 res = spi_read(&SpiInstance, addr); //spi_read has been provided
+    // Test 1: write 0xCA to 0x55, read from 0x55
+    int addr = 0x55;
+    int value = 0xCA;
+    spi_write(&SpiInstance, addr, value); //spi_write needs to be filled in
+    u8 res = spi_read(&SpiInstance, addr); //spi_read has been provided
 
-	if (res != value) {
-	    LED_data |= 0x1<<2;
-	    XGpio_DiscreteWrite(&GpioInstance, LED_CHANNEL, LED_data);
-	    //You need to insert a breakpoint here to check the variables if your tester breaks.
-	    return 0;
-	}
+    if (res != value) {
+        LED_data |= 0x1<<2;
+        XGpio_DiscreteWrite(&GpioInstance, LED_CHANNEL, LED_data);
+        //You need to insert a breakpoint here to check the variables if your tester breaks.
+        return 0;
+    }
+
+    // Test 2: write 0x06 to 0x55, read from 0x55
+    addr = 0x55; value = 0x16;
+    spi_write(&SpiInstance, addr, value); //spi_write needs to be filled in
+    res = spi_read(&SpiInstance, addr); //spi_read has been provided
+
+    if (res != value) {
+        LED_data |= 0x1<<2;
+        XGpio_DiscreteWrite(&GpioInstance, LED_CHANNEL, LED_data);
+        //You need to insert a breakpoint here to check the variables if your tester breaks.
+        return 0;
+    }
+
+    // Test 3: write all ones to address of all ones
+    addr = 0b11111111; value = 0b11111111;
+    spi_write(&SpiInstance, addr, value); //spi_write needs to be filled in
+    res = spi_read(&SpiInstance, addr); //spi_read has been provided
+
+    if (res != value) {
+        LED_data |= 0x1<<2;
+        XGpio_DiscreteWrite(&GpioInstance, LED_CHANNEL, LED_data);
+        //You need to insert a breakpoint here to check the variables if your tester breaks.
+        return 0;
+    }
 
     //Everything below is cleanup code, you don't need to modify this
     XGpio_DiscreteWrite(&GpioInstance, LED_CHANNEL, LED_data);
@@ -100,70 +122,74 @@ int main()
 }
 
 void spi_write(XSpi *SpiInstancePtr, u8 addr, u8 value){
-	// TODO: Your code here! Read the xspi.h file for more information on XSpi_Transfer()
-	u8 addr_byte = (addr << 1); //Shifted, because we have 7 bits of addr, 1 bit of R/W
-	u8 SendBuf[2];
-	SendBuf[0] = addr_byte;
-	SendBuf[1] = value;
-	XSpi_Transfer(SpiInstancePtr, SendBuf, NULL, 2);
+    // TODO: Your code here! Read the xspi.h file for more information on XSpi_Transfer()
+    u8 addr_byte = (addr << 1);
+    u8 SendBuf[2];
+    SendBuf[0] = addr_byte;
+    SendBuf[1] = value;
+    XSpi_Transfer(SpiInstancePtr, SendBuf, NULL, 2);
 }
 
 u8 spi_read(XSpi *SpiInstancePtr, u8 addr){
-	/*SpiInstancePtr is the pointer to the SPI protocol object we created
-	 * during the beginning lines of main()*/
-	u8 addr_byte = (addr << 1); //Shifted, because we have 7 bits of addr, 1 bit of R/W
-	addr_byte |= 0x1;
-	u8 RcvBuf[2];
-	u8 SendBuf[2];
-	SendBuf[0] = addr_byte;
-	SendBuf[1] = 0;	//2nd byte is 0, because we're reading data
-	XSpi_Transfer(SpiInstancePtr, SendBuf, RcvBuf, 2); //The 2 is the # of expected bytes returned
-	return RcvBuf[1]; //1st byte of RcvBuf is garbage (from when the addr was shifted in), 2nd byte is data
+    /*SpiInstancePtr is the pointer to the SPI protocol object we created
+     * during the beginning lines of main()*/
+    u8 addr_byte = (addr << 1); //Shifted, because we have 7 bits of addr, 1 bit of R/W
+    addr_byte |= 0x1;
+    u8 RcvBuf[2];
+    u8 SendBuf[2];
+    SendBuf[0] = addr_byte;
+    SendBuf[1] = 0;    //2nd byte is 0, because we're reading data
+    XSpi_Transfer(SpiInstancePtr, SendBuf, RcvBuf, 2); //The 2 is the # of expected bytes returned
+    return RcvBuf[1]; //1st byte of RcvBuf is garbage (from when the addr was shifted in), 2nd byte is data
 }
 
 int init_gpio(XGpio *GpioInstancePtr){
-	int Status;
-	Status = XGpio_Initialize(GpioInstancePtr, GPIO_DEVICE_ID);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-	XGpio_SetDataDirection(GpioInstancePtr, LED_CHANNEL, 0x0);
-	return XST_SUCCESS;
+    int Status;
+    Status = XGpio_Initialize(GpioInstancePtr, GPIO_DEVICE_ID);
+    if (Status != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+    XGpio_SetDataDirection(GpioInstancePtr, LED_CHANNEL, 0x0);
+    return XST_SUCCESS;
 }
 
 int init_spi(XSpi *SpiInstancePtr){
-	int Status;
-	XSpi_Config *ConfigPtr;	/* Pointer to Configuration data */
+    int Status;
+    XSpi_Config *ConfigPtr;    /* Pointer to Configuration data */
 
-	ConfigPtr = XSpi_LookupConfig(SPI_DEVICE_ID);
-	if (ConfigPtr == NULL) {
-		return XST_DEVICE_NOT_FOUND;
-	}
-	Status = XSpi_CfgInitialize(SpiInstancePtr, ConfigPtr,
-				  ConfigPtr->BaseAddress);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-	Status = XSpi_SelfTest(SpiInstancePtr);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-	if (SpiInstancePtr->SpiMode != XSP_STANDARD_MODE) {
-		return XST_SUCCESS;
-	}
-	Status = XSpi_SetOptions(SpiInstancePtr, XSP_MASTER_OPTION);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-	XSpi_Start(SpiInstancePtr);
-	XSpi_IntrGlobalDisable(SpiInstancePtr);
-	return XST_SUCCESS;
+    ConfigPtr = XSpi_LookupConfig(SPI_DEVICE_ID);
+    if (ConfigPtr == NULL) {
+        return XST_DEVICE_NOT_FOUND;
+    }
+    Status = XSpi_CfgInitialize(SpiInstancePtr, ConfigPtr,
+                  ConfigPtr->BaseAddress);
+    if (Status != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+    Status = XSpi_SelfTest(SpiInstancePtr);
+    if (Status != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+    if (SpiInstancePtr->SpiMode != XSP_STANDARD_MODE) {
+        return XST_SUCCESS;
+    }
+    Status = XSpi_SetOptions(SpiInstancePtr, XSP_MASTER_OPTION);
+    if (Status != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+    XSpi_Start(SpiInstancePtr);
+    XSpi_IntrGlobalDisable(SpiInstancePtr);
+    return XST_SUCCESS;
 }
 
 void delay(int n){
-	int i;
-	volatile int k;
-	for(i = 0; i < n; i++){
-		k++;
-	}
+    int i;
+    volatile int k;
+    for(i = 0; i < n; i++){
+        k++;
+    }
 }
+
+
+
+

@@ -31,22 +31,57 @@ module spimemory_test();
         $dumpvars();
 
         // Initial Conditions time = 0
-        clk=1; sclk_pin=0; cs_pin=0;
+        clk=1; sclk_pin=0;
 
-        // Test 1: CS is high --> ignore all inputs, tristate MISO, and reset FSM
+        // Test 1: CS is high --> output is suppressed
+        cs_pin = 1; #100
+        if (miso_pin != 1'bz) begin
+          $display("CS check failed");
+        end
 
-        // Test 2: CS is low, write 0xFF
-        mosi_pin = 0; #20
-        mosi_pin = 1; #140
-        mosi_pin = 1; #400
-        cs_pin = 1; #20
+        // Test 2: Write 8'b11001010 to address 7'b1010101
+        cs_pin = 0;   #5
 
-        // Test 2: CS is low, write 0xFF
-        cs_pin = 0;
+        // Address
         mosi_pin = 1; #20
-        mosi_pin = 1; #140
-        mosi_pin = 1; #200
+        mosi_pin = 0; #20
+        mosi_pin = 1; #20
+        mosi_pin = 0; #20
+        mosi_pin = 1; #20
+        mosi_pin = 0; #20
+        mosi_pin = 1; #20
 
+        // Read? = nope
+        mosi_pin = 0; #20
+
+        // Value
+        mosi_pin = 1; #20
+        mosi_pin = 1; #20
+        mosi_pin = 0; #20
+        mosi_pin = 0; #20
+        mosi_pin = 1; #20
+        mosi_pin = 0; #20
+        mosi_pin = 1; #20
+        mosi_pin = 0; #20
+
+        // Test 2: Read from address 7'b1010101
+        cs_pin = 1; #105
+        cs_pin = 0;
+
+        // Address
+        mosi_pin = 1; #20
+        mosi_pin = 0; #20
+        mosi_pin = 1; #20
+        mosi_pin = 0; #20
+        mosi_pin = 1; #20
+        mosi_pin = 0; #20
+        mosi_pin = 1; #20
+
+        // Read? = yes
+        mosi_pin = 1; #20
+
+        // Wait...
+        #200
 
         #10 $finish;
     end

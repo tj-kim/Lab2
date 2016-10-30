@@ -220,11 +220,11 @@ vlog -work axi_crossbar_v2_1_10 -64 -incr "+incdir+../../../ipstatic/axi_infrast
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
 "../../../bd/design_1/ip/design_1_xbar_0_1/sim/design_1_xbar_0.v" \
 "../../../bd/design_1/hdl/design_1.v" \
-"../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/Lab2_Final.srcs/sources_1/imports/Lab2/fsm.v" \
-"../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/Lab2_Final.srcs/sources_1/imports/Lab2/shiftregister.v" \
-"../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/Lab2_Final.srcs/sources_1/imports/Lab2/datamemory.v" \
-"../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/Lab2_Final.srcs/sources_1/imports/Lab2/inputconditioner.v" \
-"../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/Lab2_Final.srcs/sources_1/imports/Lab2/spimemory.v" \
+"../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/src/fsm.v" \
+"../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/src/shiftregister.v" \
+"../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/src/datamemory.v" \
+"../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/src/inputconditioner.v" \
+"../../../bd/design_1/ipshared/olin.edu/spimemory_v1_0/src/spimemory.v" \
 "../../../bd/design_1/ip/design_1_spiMemory_0_0/sim/design_1_spiMemory_0_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_9 -64 -incr "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
