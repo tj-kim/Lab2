@@ -206,11 +206,10 @@ We read from the register that was just written to (0x55), and got the value tha
 
 
 ### Full System on FPGA
-We uploaded this schematic to the hardware, and used these test cases. We wrote code in C to automate this test pattern.
-
+We uploaded our schematic to the hardware, and used the test cases below. We wrote code in C to automate this test pattern.
 
 * Write 0xCA to 0x55, read from 0x55
-* Write 0x06 to 0x55, read from 0x55
+* Write a different value to 0x55, read again to make sure data was overwritten
 * Write 8’b11111111 to 7’b1111111, read from 7’b1111111
 
 For the first test, we got the following outputs from our code:
