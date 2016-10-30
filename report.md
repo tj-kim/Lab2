@@ -193,14 +193,14 @@ When the chip select pin is high, the output should always be Z. We added a chec
 
 #### Write Operation
 
-
+![SPI Write](https://github.com/tj-kim/Lab2/blob/master/images/spi_write.png)
 
 In this scenario, the two MOSI bits were 8’b10101010 (address = 0x55 and Read = OFF) and 8’b11001010 (value = 0xCA). When the counter reaches 8 the first time, the address becomes 0x55, and when the counter reaches 8 again, the data memory outputs 0xCA. Also, MISO should not output any values during this operation.
 
 
 #### Read Operation
 
-
+![SPI Read](https://github.com/tj-kim/Lab2/blob/master/images/spi_read.png)
 
 We read from the register that was just written to (0x55), and got the value that we originally inputted (0xCA). The binary representation (8’b11001010) is then outputted to MISO.
 
@@ -209,11 +209,13 @@ We read from the register that was just written to (0x55), and got the value tha
 We uploaded this schematic to the hardware, and used the following test cases:
 
 
-Write 0xCA to 0x55, read from 0x55
-Write 0x06 to 0x55, read from 0x55
-Write 8’b11111111 to 7’b1111111, read from 7’b1111111
+* Write 0xCA to 0x55, read from 0x55
+* Write 0x06 to 0x55, read from 0x55
+* Write 8’b11111111 to 7’b1111111, read from 7’b1111111
 
+For the first test, we got the following outputs from our code:
 
+![First Test Outputs](https://github.com/tj-kim/Lab2/blob/master/images/test_variables.png)
 
 
 
