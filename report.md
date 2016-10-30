@@ -85,15 +85,15 @@ When the Read flag is OFF, the FSM correctly iterates through the “Write” po
 *Get*
 
 
-Next State = Got (if counter = 8)
-Triggered Outputs = (none)
+* Next State = Got (if counter = 8)
+* Triggered Outputs = (none)
 
 
 *Got*
 
 
-Next State = Write1 (if Read = OFF)
-Triggered Outputs = counter_reset, ADDR_WE
+* Next State = Write1 (if Read = OFF)
+* Triggered Outputs = counter_reset, ADDR_WE
 
 ![Write1](https://github.com/tj-kim/Lab2/blob/master/images/fsm_write1.png)
 
@@ -102,8 +102,8 @@ Triggered Outputs = counter_reset, ADDR_WE
 *Write1*
 
 
-Next State = Write2 (if counter = 8)
-Triggered Outputs = (none)
+* Next State = Write2 (if counter = 8)
+* Triggered Outputs = (none)
 
 
 ![Write2](https://github.com/tj-kim/Lab2/blob/master/images/fsm_write2_done.png)
@@ -113,15 +113,15 @@ Triggered Outputs = (none)
 *Write2*
 
 
-Next State = Done
-Triggered Outputs = DM_WE
+* Next State = Done
+* Triggered Outputs = DM_WE
 
 
 *Done*
 
 
-Next State = Get (if RESET)
-Triggered Outputs = counter_reset
+* Next State = Get (if RESET)
+* Triggered Outputs = counter_reset
 
 
 #### Read From SPI
@@ -141,29 +141,29 @@ When the Read flag is ON, the FSM iterates through the “Read” portion of the
 *Get*
 
 
-Next State = Got (if counter = 8)
-Triggered Outputs = (none)
+* Next State = Got (if counter = 8)
+* Triggered Outputs = (none)
 
 
 *Got*
 
 
-Next State = Read1 (if Read = ON)
-Triggered Outputs = counter_reset, ADDR_WE
+* Next State = Read1 (if Read = ON)
+* Triggered Outputs = counter_reset, ADDR_WE
 
 
 *Read1*
 
 
-Next State = Read2
-Triggered Outputs = (none)
+* Next State = Read2
+* Triggered Outputs = (none)
 
 
 *Read2*
 
 
-Next State = Read3
-Triggered Outputs = SR_WE
+* Next State = Read3
+* Triggered Outputs = SR_WE
 
 
 ![Read3](https://github.com/tj-kim/Lab2/blob/master/images/fsm_read3_done.png)
@@ -172,15 +172,15 @@ Triggered Outputs = SR_WE
 *Read3*
 
 
-Next State = Done (if counter = 8)
-Triggered Outputs = MISO_BUFF
+* Next State = Done (if counter = 8)
+* Triggered Outputs = MISO_BUFF
 
 
 *Done*
 
 
-Next State = Get (if RESET)
-Triggered Outputs = counter_reset
+* Next State = Get (if RESET)
+* Triggered Outputs = counter_reset
 
 
 ### Full System in Verilog
