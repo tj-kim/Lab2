@@ -5,7 +5,7 @@
 
 
 ### Test Bench Explanation
-The purpose of the input conditioner is to take a signal from a button or switch and clean it up enough to be read without noise by the system. It also detects the rising edge and falling edge of the input signal and sends flags to other parts of the circuit based on these signals. In order to test the input conditioner, we looked at 3 cases. The first case was a test to see whether or not the circuit would let several inputs in short succession through the circuit. If the circuit had an output that wasnít zero, this test would fail. Luckily, it passed, and showed that the counter and circuit works. The second case is when the button is not pressed long enough. For this, we sent an input signal in that was much shorter than the counter. If our input conditioner is working, we expect no output signal because it would have been interpreted as noise. The third case is a test to see if the rising edge and falling edge signals are actually synchronized with the output signal. To test this, we sent an input signal through the circuit and checked if the other signals matched when the output began/ended. This passed.
+The purpose of the input conditioner is to take a signal from a button or switch and clean it up enough to be read without noise by the system. It also detects the rising edge and falling edge of the input signal and sends flags to other parts of the circuit based on these signals. In order to test the input conditioner, we looked at 3 cases. The first case was a test to see whether or not the circuit would let several inputs in short succession through the circuit. If the circuit had an output that wasn‚Äôt zero, this test would fail. Luckily, it passed, and showed that the counter and circuit works. The second case is when the button is not pressed long enough. For this, we sent an input signal in that was much shorter than the counter. If our input conditioner is working, we expect no output signal because it would have been interpreted as noise. The third case is a test to see if the rising edge and falling edge signals are actually synchronized with the output signal. To test this, we sent an input signal through the circuit and checked if the other signals matched when the output began/ended. This passed.
 
 
 ### Wait Time Analysis
@@ -33,7 +33,7 @@ How long in seconds will it take until we reach the wait time with our clock?
 ### Test Bench Explanation
 
 
-The test bench execution for the shift register was very similar to that of HW 4 with test case passes. We also implemented previous table test bench styles, to give users of the test bench more insight in potential errors. We make an assumption that the initial condition of the shift register memory is ëxxxxxxxxí with wires without a known value. 
+The test bench execution for the shift register was very similar to that of HW 4 with test case passes. We also implemented previous table test bench styles, to give users of the test bench more insight in potential errors. We make an assumption that the initial condition of the shift register memory is ‚Äòxxxxxxxx‚Äô with wires without a known value. 
 
 
 The first test case just examines the initial condition of the shift register. If all the values stored in the shift register memory are unidentifiable, it will pass.
@@ -72,14 +72,14 @@ As part of our test plan, we first made sure that the FSM worked as specified in
 We checked this by looking at the outputs of GTKWave.
 
 
-![Input Conditioner Circuit Diagram](https://github.com/tj-kim/Lab2/blob/master/fsm_write.png)
+![Write to SPI](https://github.com/tj-kim/Lab2/blob/master/images/fsm_write.png)
 
 
 
-When the Read flag is OFF, the FSM correctly iterates through the ìWriteî portion of the FSM. The process is: Get, Got, Write1 (times 8), Write2, Done.
+When the Read flag is OFF, the FSM correctly iterates through the ‚ÄúWrite‚Äù portion of the FSM. The process is: Get, Got, Write1 (times 8), Write2, Done.
 
 
-![Input Conditioner Circuit Diagram](https://github.com/tj-kim/Lab2/blob/master/fsm_got.png)
+![Got](https://github.com/tj-kim/Lab2/blob/master/images/fsm_got.png)
 
 
 *Get*
@@ -95,7 +95,7 @@ Triggered Outputs = (none)
 Next State = Write1 (if Read = OFF)
 Triggered Outputs = counter_reset, ADDR_WE
 
-![Input Conditioner Circuit Diagram](https://github.com/tj-kim/Lab2/blob/master/fsm_write1.png)
+![Write1](https://github.com/tj-kim/Lab2/blob/master/images/fsm_write1.png)
 
 
 
@@ -106,7 +106,7 @@ Next State = Write2 (if counter = 8)
 Triggered Outputs = (none)
 
 
-![Input Conditioner Circuit Diagram](https://github.com/tj-kim/Lab2/blob/master/fsm_write2_done.png)
+![Write2](https://github.com/tj-kim/Lab2/blob/master/images/fsm_write2_done.png)
 
 
 
@@ -127,14 +127,14 @@ Triggered Outputs = counter_reset
 #### Read From SPI
 
 
-![Input Conditioner Circuit Diagram](https://github.com/tj-kim/Lab2/blob/master/fsm_read.png)
+![Read From SPI](https://github.com/tj-kim/Lab2/blob/master/images/fsm_read.png)
 
 
 
-When the Read flag is ON, the FSM iterates through the ìReadî portion of the FSM. The process is: Get, Got, Read1, Read2, Read3 (times 8), Done.
+When the Read flag is ON, the FSM iterates through the ‚ÄúRead‚Äù portion of the FSM. The process is: Get, Got, Read1, Read2, Read3 (times 8), Done.
 
 
-![Input Conditioner Circuit Diagram](https://github.com/tj-kim/Lab2/blob/master/fsm_read12.png)
+![Read12](https://github.com/tj-kim/Lab2/blob/master/images/fsm_read12.png)
 
 
 
@@ -166,7 +166,7 @@ Next State = Read3
 Triggered Outputs = SR_WE
 
 
-![Input Conditioner Circuit Diagram](https://github.com/tj-kim/Lab2/blob/master/fsm_read3_done.png)
+![Read3](https://github.com/tj-kim/Lab2/blob/master/images/fsm_read3_done.png)
 
 
 *Read3*
@@ -195,14 +195,14 @@ When the chip select pin is high, the output should always be Z. We added a chec
 
 
 
-In this scenario, the two MOSI bits were 8íb10101010 (address = 0x55 and Read = OFF) and 8íb11001010 (value = 0xCA). When the counter reaches 8 the first time, the address becomes 0x55, and when the counter reaches 8 again, the data memory outputs 0xCA. Also, MISO should not output any values during this operation.
+In this scenario, the two MOSI bits were 8‚Äôb10101010 (address = 0x55 and Read = OFF) and 8‚Äôb11001010 (value = 0xCA). When the counter reaches 8 the first time, the address becomes 0x55, and when the counter reaches 8 again, the data memory outputs 0xCA. Also, MISO should not output any values during this operation.
 
 
 #### Read Operation
 
 
 
-We read from the register that was just written to (0x55), and got the value that we originally inputted (0xCA). The binary representation (8íb11001010) is then outputted to MISO.
+We read from the register that was just written to (0x55), and got the value that we originally inputted (0xCA). The binary representation (8‚Äôb11001010) is then outputted to MISO.
 
 
 ### Full System on FPGA
@@ -211,7 +211,7 @@ We uploaded this schematic to the hardware, and used the following test cases:
 
 Write 0xCA to 0x55, read from 0x55
 Write 0x06 to 0x55, read from 0x55
-Write 8íb11111111 to 7íb1111111, read from 7íb1111111
+Write 8‚Äôb11111111 to 7‚Äôb1111111, read from 7‚Äôb1111111
 
 
 
